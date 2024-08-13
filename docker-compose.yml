@@ -1,7 +1,7 @@
 services:
   overseerr:
     build:
-      context: https://github.com/ano0002/overseerr.git#overseer-with-lidarr-support
+      context: https://github.com/Tw1zT3d2four7/Overseerr.git#overseer-with-lidarr-support
       args:
         COMMIT_TAG: bb1a14e
     ports:
