@@ -1,12 +1,10 @@
-version: '3'
 services:
   overseerr:
     build:
-      context: .
-      dockerfile: Dockerfile.local
+      context: https://github.com/Tw1zT3d2four7/Overseerr.git#overseer-with-lidarr-support
+      args:
+        COMMIT_TAG: ba230f8
     ports:
       - 5055:5055
     volumes:
-      - .:/app:rw,cached
-      - /app/node_modules
-      - /app/.next
+      - /PATH/TO/YOUR/OVERSEER/config:/app/config
