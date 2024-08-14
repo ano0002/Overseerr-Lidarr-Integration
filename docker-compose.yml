@@ -1,12 +1,22 @@
-version: '3'
 services:
   overseerr:
-    build:
-      context: .
-      dockerfile: Dockerfile.local
+    image: ghcr.io/tw1zt3d2four7/overseer/lidarr:latest
+    container_name: overseerr
+    pull_policy: always
+    restart: unless-stopped
     ports:
       - 5055:5055
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
     volumes:
-      - .:/app:rw,cached
-      - /app/node_modules
-      - /app/.next
+      - ./config:/app/config
+      - /mnt:/mnt
+    healthcheck:
+      test: wget http://localhost:5055/api/v1/status -qO /dev/null || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    
