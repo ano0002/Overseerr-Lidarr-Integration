@@ -3,7 +3,7 @@ services:
     build:
       context: https://github.com/Tw1zT3d2four7/Overseerr.git#overseer-with-lidarr-support
       args:
-        COMMIT_TAG: bb1a14e
+        COMMIT_TAG: ba230f8
     ports:
       - 5055:5055
     volumes:
