@@ -68,3 +68,6 @@ tsconfig.tsbuildinfo
 # Config Cache Directory
 config/cache
 
+# Yarn
+.yarn/install-state.gz
+.yarn/build-state.yml
